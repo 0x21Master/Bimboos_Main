@@ -1,9 +1,9 @@
+import Header from 'components/Header'
 import React from 'react'
 import styled from 'styled-components/macro'
 
 import { WalletDialog, WalletShow } from '../Wallet'
 import Footer from './Footer'
-import Header from './Header'
 interface IProps {
   children?: React.ReactNode
 }
@@ -17,8 +17,9 @@ const LayoutContent = styled.div`
 export default function Layout({ children }: IProps) {
   return (
     <>
-      <WalletDialog />
-      <WalletShow />
+      {/* <WalletDialog />
+      <WalletShow /> */}
+      <Header></Header>
       <LayoutContent>{children}</LayoutContent>
     </>
   )

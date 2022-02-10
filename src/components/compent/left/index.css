@@ -1,0 +1,48 @@
+.letf-But{
+    width: 121px;
+    height: 1400px;
+    border: 2px solid black;
+    margin-left: 5px;
+}
+.letf-But>div{
+    width: 86px;
+    height: 1105px;
+    /* border: 1px solid black; */
+    margin-left: 15px;
+    margin-top: 132px;
+}
+.letf-But>div>span{
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(15, 15, 15,0);
+  margin-left: 2px;
+  border-radius: 50%;
+  display: block;
+  margin-top: 10px;
+  
+}
+
+.letf-But>div>span:nth-child(1){
+    margin-top: 100px;
+}
+.letf-But>div>span:nth-last-child(1){
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    margin-left: 2px;
+    margin-top: 350px;
+}
+
+.letf-But>div>span:hover{
+    background-color:rgb(28, 77, 238);
+    color: blanchedalmond;
+}
+.letf-But>div>span>span{
+    width: 24px;
+    height: 24px;
+    /* border: 1px solid black; */
+    margin-top: 25px;
+    display: block;
+    margin-left: 28px;
+}

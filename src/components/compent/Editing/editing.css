@@ -1,0 +1,132 @@
+.editing {
+    width: 1206px;
+    /* height: 468px; */
+}
+
+.editing>div:nth-child(1) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 1206px;
+    /* height: 80px; */
+    /* border: 1px solid red; */
+
+}
+h3{
+    white-space: nowrap;
+}
+
+.editing>div:nth-child(1)>div:nth-child(1)>.editHeaderLeft {
+    width: 173px;
+    /* height: 60px; */
+    /* border: 1px solid black; */
+}
+
+.editing>div:nth-child(1)>div:nth-child(1)>.editHeaderLeft>h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #130F26;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+.editing>div:nth-child(1)>div:nth-child(1)>.editHeaderLeft>p {
+
+    position: static;
+    width: 105px;
+    height: 18px;
+    left: 0px;
+    top: 52px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #9B9B9B;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 16px 0px;
+}
+
+.editing>div:nth-child(1)>div:nth-child(2) {
+    width: 63px;
+    height: 24px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-decoration-line: underline;
+    text-transform: capitalize;
+
+    color: #452F02;
+}
+hr{
+ 
+width: 1209px;
+height: 0px;
+border: 1px solid #D7D7D7;
+margin-top:15px;
+}
+.Arrtext{
+    height: 20px;
+    overflow: hidden;
+}
+.Arrtext p{
+    margin-left: -70px;
+     float: right;
+     height: 5px;
+     margin-top: -15px;
+   
+}
+.Arrtext p>span:nth-child(1){
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 13px;
+    margin-right: 5px;
+    margin-left: -15px;
+}
+.Arrtext p>span:nth-last-child(1){
+    width: 177px;
+    margin-left: 40px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    /* identical to box height, or 89% */
+    
+    display: flex;
+    align-items: center;
+    margin-top: -25px;
+    color: #452F02;
+}
+.listIteamImg{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.editHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end
+}

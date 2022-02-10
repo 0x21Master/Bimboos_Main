@@ -180,6 +180,7 @@
     "@mui/lab": "^5.0.0-alpha.66",
     "@mui/material": "^5.1.0",
     "@types/lodash": "^4.14.176",
+    "axios": "^0.25.0",
     "decomment": "^0.9.5",
     "lightweight-charts": "^3.7.0",
     "lodash": "^4.17.21",

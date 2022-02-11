@@ -15,7 +15,7 @@ import { postWhiteList } from 'apis/whiteList'
 import { Dialog, DialogTitle } from '@material-ui/core'
 
 export default function Home() {
-  const [mintNum, setMintNum] = useState<number>(0)
+  const [mintNum, setMintNum] = useState<number>(1)
   const [errMsg, setErrMsg] = useState<string>('none')
   const [open, setOpen] = useState(false)
 
@@ -24,8 +24,6 @@ export default function Home() {
   const signer = library?.getSigner()
 
   const mint = async () => {
-    // console.log(account)
-    const isWhiteAddress = await postWhiteList({ address: account ?? '' })
     if (!signer || !account) {
       return
     }
@@ -34,6 +32,7 @@ export default function Home() {
       setOpen(true)
       return
     }
+    const isWhiteAddress = await postWhiteList({ address: account ?? '' })
     if (!isWhiteAddress.data.status) {
       setErrMsg('No purchase permission')
       setOpen(true)
@@ -53,7 +52,13 @@ export default function Home() {
     signerContract?.mintNicMeta(mintNum, overrides)
   }
   const changeMintNum = (e: ChangeEvent<HTMLInputElement>) => {
-    setMintNum(Number(e.target.value))
+    if (Number(e.target.value) >= 1 && Number(e.target.value) <= 3) {
+      setMintNum(Number(e.target.value))
+    } else {
+      setMintNum(1)
+      setErrMsg('Please enter a valid number')
+      setOpen(true)
+    }
   }
   const handleClose = () => {
     setOpen(false)

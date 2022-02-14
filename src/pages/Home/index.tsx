@@ -98,6 +98,7 @@ export default function Home() {
         <button onClick={mint}>mint</button>
         <button onClick={reveal}>reveal</button>
       </div>
+      
     </>
   )
 }

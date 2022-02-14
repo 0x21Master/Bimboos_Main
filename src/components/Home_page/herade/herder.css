@@ -1,0 +1,44 @@
+.herder{
+    width: 2880px;
+    height: 1200px;
+    /* background-size; */
+    background-image: url(../../../assets/HomePage_imgs/sasse/bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+   flex-direction: row-reverse;
+    
+}
+.herder>div{
+    margin: 100px 300px 0px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 620px;
+    height: 170px;
+    /* background-color: black; */
+    /* background-image: url(../../sasse/Group\ 16-1.png);
+    background-image: url(../../sasse/Group\ .png);
+    background-image: url(../../sasse/ins.png);*/
+} 
+.herder>div>div{
+    width: 160px;
+    height: 160px;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+}
+.herder>div>div:nth-child(1){
+    background-image: url(../../../assets/HomePage_imgs/sasse/Group\ 16-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.herder>div>div:nth-child(2){
+    background-image: url(../../../assets/HomePage_imgs/sasse/Group\ .png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.herder>div>div:nth-child(3){
+    background-image: url(../../../assets/HomePage_imgs/sasse/ins.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

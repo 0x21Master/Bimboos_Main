@@ -1,0 +1,8 @@
+.home-page{
+    width: 2880px;
+    height: 3200px;
+    border: 1px solid black ;
+    background-color: black;
+    color: white;
+    /* overflow: hidden; */
+}

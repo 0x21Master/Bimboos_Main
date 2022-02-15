@@ -8,9 +8,7 @@ interface IProps {
   children?: React.ReactNode
 }
 const LayoutContent = styled.div`
-  padding-top: 75px;
   width: 100%;
-  max-width: 1160px;
   margin: 0 auto;
 `
 
@@ -19,7 +17,7 @@ export default function Layout({ children }: IProps) {
     <>
       {/* <WalletDialog />
       <WalletShow /> */}
-      <Header></Header>
+      {/* <Header></Header> */}
       <LayoutContent>{children}</LayoutContent>
     </>
   )

@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit'
 import { load, save } from 'redux-localstorage-simple'
 
 import application from './application/reducer'
-import funds from './funds/reducer'
 import list from './lists/reducer'
 import logs from './logs/slice'
 import multicall from './multicall/reducer'
@@ -30,7 +29,6 @@ const store = configureStore({
   reducer: {
     user,
     transactions,
-    funds,
     multicall,
     list,
     logs,

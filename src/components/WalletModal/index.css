@@ -1,0 +1,29 @@
+.wallet-box .wallet-bgimg {
+  width: 100%;
+}
+.metamask {
+  position: absolute;
+  bottom: 6.25rem /* 100/16 */;
+  left: 12.5rem /* 200/16 */;
+  width: 31.25rem /* 500/16 */;
+}
+.metamask img {
+  width: 100%;
+}
+.wallet-connect {
+  width: 50rem /* 800/16 */;
+}
+.wallet-connect img {
+  width: 100%;
+}
+.connect-box .account-box {
+  position: absolute;
+  bottom: 28.125rem /* 450/16 */;
+  left: 28.125rem /* 450/16 */;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.connect-box .wallet-icons {
+  position: absolute;
+  bottom: 12.5rem /* 200/16 */;
+  left: 0px;
+}

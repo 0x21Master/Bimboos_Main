@@ -3,7 +3,7 @@ import { t, Trans } from '@lingui/macro'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import { darken } from 'polished'
-import { useMemo } from 'react'
+import { Dispatch, SetStateAction, useMemo } from 'react'
 import { Activity } from 'react-feather'
 import styled, { css } from 'styled-components/macro'
 
@@ -219,7 +219,7 @@ function Web3StatusInner() {
   }
 }
 
-export default function Web3Status() {
+export default function Web3Status({ setWallet }: any) {
   const { active, account } = useWeb3React()
   const contextNetwork = useWeb3React(NetworkContextName)
 
@@ -237,9 +237,14 @@ export default function Web3Status() {
 
   return (
     <>
-      <Web3StatusInner />
+      {/* <Web3StatusInner /> */}
       {(contextNetwork.active || active) && (
-        <WalletModal ENSName={ENSName ?? undefined} pendingTransactions={pending} confirmedTransactions={confirmed} />
+        <WalletModal
+          ENSName={ENSName ?? undefined}
+          setWallet={setWallet}
+          pendingTransactions={pending}
+          confirmedTransactions={confirmed}
+        />
       )}
     </>
   )

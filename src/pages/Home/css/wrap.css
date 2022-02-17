@@ -38,7 +38,7 @@
 .wrap .wrap-content {
   width: 100%;
   position: relative;
-  height: 60.3125rem /* 965/16 */;
+  height: 50.3125rem /* 965/16 */;
 }
 .wrap .wrap-content .text-one {
   width: 104%;
@@ -50,15 +50,13 @@
 }
 .wrap .wrap-content .content-middle {
   width: 100%;
-  height: 60.3125rem /* 965/16 */;
+  height: 42.5rem /* 965/16 */;
   background-color: yellow;
   position: relative;
 }
 .wrap .wrap-content .content-middle .middle-bg {
   position: absolute;
-  left: -9rem /* 144/16 */;
-  width: 130%;
-  height: 60.3125rem /* 965/16 */;
+  width: 100%;
 }
 .wrap .wrap-content .content-middle .middle-people {
   position: absolute;
@@ -71,7 +69,7 @@
   height: 9.09375rem /* 145.5/16 */;
   position: absolute;
   left: -1.3125rem /* 21/16 */;
-  bottom: -1.5625rem /* 25/16 */;
+  bottom: -11.5625rem /* 25/16 */;
 }
 .wrap .wrap-content .content-middle .chat-icon {
   position: absolute;
@@ -182,8 +180,8 @@
   padding: 0px;
   position: relative;
   width: 50rem;
-  top: -75rem;
-  left: 18rem;
+  top: -66rem;
+  left: 13rem;
   z-index: 2;
   cursor: pointer;
 }
@@ -195,18 +193,18 @@
   cursor: pointer;
 }
 .open-site .Sucessful-img {
-  width: 45rem;
+  width: 31rem;
   position: absolute;
   cursor: pointer;
-  top: 8rem;
+  top: 7rem;
   left: 3rem;
 }
 .open-site .openaes-img {
-  width: 35rem;
+  width: 30rem;
   position: absolute;
   cursor: pointer;
-  top: 20rem !important;
-  left: 13rem !important;
+  top: 15rem !important;
+  left: 8rem !important;
 }
 .open-site .body_export-img {
   width: 2rem;
@@ -215,98 +213,99 @@
   left: 48.8rem;
 }
 .open-site .Groupimg {
-  width: 70rem;
+  width: 50rem;
   position: absolute;
   cursor: pointer;
-  top: -5rem;
-  left: 10rem;
+  top: -2rem;
+  left: 9rem;
 }
 .open-site .CheckEtherscan-img {
-  width: 35rem;
+  width: 25rem;
   position: absolute;
-  top: 25rem;
-  left: 12rem;
+  top: 19rem;
+  left: 10rem;
 }
 .open-site .body_export-img1 {
   width: 2rem;
   position: absolute;
-  top: 25.8rem;
-  left: 48rem;
+  top: 19rem;
+  left: 36rem;
 }
 .open-site .metamask1-img {
-  width: 55rem;
+  width: 40rem;
   position: absolute;
   cursor: pointer;
 }
 .open-site .mint-img {
-  width: 55rem;
+  width: 40rem;
   position: absolute;
   cursor: pointer;
 }
 .open-site .mastmarsk-img {
   width: 20rem;
   position: absolute;
-  top: 25rem;
-  left: 20rem;
+  top: 18rem;
+  left: 15rem;
 }
 .open-site .buy-img {
-  width: 10rem;
+  width: 6rem;
   position: absolute;
   cursor: pointer;
-  left: 45rem;
+  left: 31rem;
+  top: 2rem;
   z-index: 3;
 }
 .open-site .time-img {
   position: absolute;
   z-index: 3;
-  width: 25rem;
-  left: 14rem;
-  top: 7rem;
+  width: 20rem;
+  left: 9rem;
+  top: 6rem;
 }
 .open-site .taranstr-img {
   position: absolute;
   z-index: 3;
-  width: 35rem;
-  left: 20rem;
-  top: 28.5rem;
+  width: 20rem;
+  left: 16rem;
+  top: 21.5rem;
 }
 .open-site .Blackbackground-img {
-  width: 55rem;
+  width: 40rem;
   position: absolute;
   cursor: pointer;
 }
 .open-site .body_text-img {
-  width: 24rem;
+  width: 16rem;
   position: absolute;
   cursor: pointer;
-  left: 18rem;
-  top: 14rem;
+  left: 12rem;
+  top: 11rem;
 }
 .open-site .out-img {
   width: 2rem;
   position: absolute;
   cursor: pointer;
-  left: 24rem;
-  top: 22rem;
+  left: 19.4rem;
+  top: 16.3rem;
 }
 .open-site p {
   position: absolute;
   cursor: pointer;
-  left: 27.4rem;
-  top: 22.8rem;
-  font-size: 2.3rem;
+  left: 22.4rem;
+  top: 17rem;
+  font-size: 2rem;
 }
 .open-site .up-img {
   width: 2rem;
   position: absolute;
   cursor: pointer;
-  left: 30rem;
-  top: 22.8rem;
+  left: 24.5rem;
+  top: 16.8rem;
 }
 .open-site .Mint_two-img {
-  width: 27rem;
+  width: 12rem;
   position: absolute;
   cursor: pointer;
-  left: 25rem;
-  top: 26rem;
+  left: 20rem;
+  top: 21rem;
 }

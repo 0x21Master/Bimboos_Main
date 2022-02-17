@@ -1,3 +1,7 @@
+/* eslint-disable no-var */
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable prettier/prettier */
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components/macro'
@@ -25,13 +29,32 @@ import discord from '../../assets/HomePage_imgs/sasse/discord.png'
 import opensea from '../../assets/HomePage_imgs/sasse/opensea.png'
 import etherscan from '../../assets/HomePage_imgs/sasse/etherscan.png'
 import ins from '../../assets/HomePage_imgs/sasse/ins.png'
+import bg_body from "../../assets/HomePage_imgs/sasse/bg_body.png"
+import body_export from "../../assets/HomePage_imgs/sasse/body_export.png"
+import Sucessful from "../../assets/HomePage_imgs/sasse/Sucessful.png"
+import openaes from  "../../assets/HomePage_imgs/sasse/openaes.png"
+import Groupimg from "../../assets/HomePage_imgs/sasse/Groupimg.png"
+import CheckEtherscan from "../../assets/HomePage_imgs/sasse/CheckEtherscan.png"
+import mintgorme from "../../assets/HomePage_imgs/sasse/mintgorme.png"
+import mastmarsk from  "../../assets/HomePage_imgs/sasse/metamask.png"
+import buy from  "../../assets/HomePage_imgs/sasse/buy.png"
+import mint_img from "../../assets/HomePage_imgs/sasse/mint.png"
+import time from "../../assets/HomePage_imgs/sasse/time.png"
+import metamask1 from "../../assets/HomePage_imgs/sasse/metamask1.png"
+import taranstr from  "../../assets/HomePage_imgs/sasse/taranstr.png"
+import body_text from "../../assets/HomePage_imgs/sasse/body_text.png"
+import Mint_two from "../../assets/HomePage_imgs/sasse/Mint_two.png"
+import up from "../../assets/HomePage_imgs/sasse/up.png"
+import out from "../../assets/HomePage_imgs/sasse/out.png"
+import Blackbackground from "../../assets/HomePage_imgs/sasse/Blackbackground.png"
 import Web3Status from 'components/Web3Status'
+import { number } from '@lingui/core/cjs/formats'
 export default function Home() {
   const [mintNum, setMintNum] = useState<number>(1)
   const [errMsg, setErrMsg] = useState<string>('none')
   const [open, setOpen] = useState(false)
   const [isShoWallet, setIsShoWallet] = useState(false)
-
+  const [initialvalue,setinitialvalue] = useState<any>(0)
   const contract = useBlindBoxAbi()
   const { account, chainId, library } = useActiveWeb3React()
   const signer = library?.getSigner()
@@ -117,28 +140,29 @@ export default function Home() {
             ))}
           </div>
           <img className="mint-img" src={mintBtn} onClick={mint} alt="" />
-          <img className="opensea-img" src={opensea} alt="" />
+          {/* <div className='open-site'>
+            <img className="opensea-img" src={opensea} alt="" />
+            <img className='Sucessful-img' src={Sucessful} alt=''/>
+          </div> */}
         </div>
         <div className="wrap-content">
           <img className="text-one" src={textOne} alt="" />
           <div className="content-middle">
-            <img className="middle-bg" src={middleBg} alt="" />
-            <img className="middle-people" src={middlePeople} alt="" />
-            <img className="text-two" src={textTwo} alt="" />
+            <img className="middle-bg" src={bg_body} alt="" />
+            {/* <img className="middle-people" src={middlePeople} alt="" />*/}
+            <img className="text-two" src={textTwo} alt="" /> 
             <div className="chat-icon">
-              <img className="twitter-img" src={twitter} alt="" />
-              <img className="discord-img" src={discord} alt="" />
-              <img className="ins-img" src={ins} alt="" />
             </div>
             <div className="content-text">
-              <p className="left-text">
+              {/* 更改部分 */}
+              {/* <p className="left-text">
                 Leave the drab reality and enter the world of Karafuru. It’s a magical space where colors reign supreme
                 and everyone just wants to have fun. Give it a spin and see which one of our personas you get.
-              </p>
-              <p className="right-text">
+              </p> */}
+              {/* <p className="right-text">
                 These personas are your ticket into the playground with the coolest crew in town. More NFTs to drop.
                 More mediums to come. It is a brave new digital world. Come over and play.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -155,6 +179,49 @@ export default function Home() {
         </Dialog>
         {isShoWallet && <Web3Status setWallet={setIsShoWallet} />}
       </div>
+      {/* success*/}
+      {/* <div className='open-site'>
+            <img  className='metamask1-img' src={metamask1}/>
+            <img className="opensea-img" src={opensea} alt="" />
+            <img className='Sucessful-img' src={Sucessful} alt=''/>
+            <img className='openaes-img' src={openaes}/>
+            <img className='body_export-img' src={body_export}/>
+      </div> */}
+      {/* failure */}
+      {/* <div className='open-site'>
+      <img className="opensea-img" src={etherscan} alt="" />
+              <img  className='metamask1-img' src={metamask1}/>
+             <img className='Groupimg' src={Groupimg} alt=''/>
+             <img className='CheckEtherscan-img' src={CheckEtherscan}/>
+             <img className='body_export-img1' src={body_export}/>
+      </div> */}
+       {/* Before login */}
+      <div className='open-site'>
+            <img className='buy-img' src={buy}/>
+            <img className='mint-img' src={mint_img} alt=''/>
+            <img className='mastmarsk-img' src={mastmarsk}/>
+              <img className='time-img' src={time}/> 
+              {/* <img className='buy-img' src={buy}/> */}
+        </div>
+          {/* Before login two */}
+        {/* <div className='open-site'>
+            <img className='mint-img' src={mint_img} alt=''/>
+            <img className='mastmarsk-img' src={mastmarsk}/>
+            <img className='buy-img' src={buy}/>
+            <img className='time-img' src={time}/> 
+          <img className='taranstr-img' src={taranstr}/>
+        </div> */}
+        {/* After the failure */}
+        {/* <div className='open-site'>
+            <img className='Blackbackground-img' src={Blackbackground} alt=''/> 
+            <img className='buy-img' src={buy}/>
+            <img className='time-img' src={time}/> 
+            <img className='body_text-img' src={body_text}/>
+            <img className='out-img' src={out} />
+            <p>{initialvalue}</p>
+            <img className='up-img' src={up}/>
+            <img className='Mint_two-img' src={Mint_two} />
+        </div> */}
     </>
   )
 }

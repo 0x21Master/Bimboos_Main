@@ -142,7 +142,18 @@ export default function Home() {
             {/* {[twitter, discord, opensea, etherscan].map((imgItem, index,herf) => (
               <img key={index} src={imgItem}></img>
             ))} */}
-            <a></a>
+            <a href='https://twitter.com/Dream_Bimbos'>
+              <img src={twitter}/>
+            </a>
+            <a href='DreamCard.io '>
+              <img src={discord}/>
+            </a>
+            <a href='https://opensea.io/collection/dreamcardbimbos'>
+              <img src={opensea}/>
+            </a>
+            <a href='https://discord.gg/xworldgames'>
+              <img src={etherscan}/>
+            </a>
           </div>
           <img className="mint-img" src={mintBtn} onClick={mint} alt="" />
         </div>

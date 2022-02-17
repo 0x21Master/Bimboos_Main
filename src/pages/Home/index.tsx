@@ -139,9 +139,10 @@ export default function Home() {
           <img className="bg-img" src={bgImg} alt="" />
           <div className="link-group">
              
-            {[twitter, discord, opensea, etherscan].map((imgItem, index,herf) => (
+            {/* {[twitter, discord, opensea, etherscan].map((imgItem, index,herf) => (
               <img key={index} src={imgItem}></img>
-            ))}
+            ))} */}
+            <a></a>
           </div>
           <img className="mint-img" src={mintBtn} onClick={mint} alt="" />
         </div>

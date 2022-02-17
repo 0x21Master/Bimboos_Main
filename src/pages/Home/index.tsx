@@ -138,7 +138,8 @@ export default function Home() {
         <div className="wrap-top">
           <img className="bg-img" src={bgImg} alt="" />
           <div className="link-group">
-            {[twitter, discord, opensea, etherscan].map((imgItem, index) => (
+             
+            {[twitter, discord, opensea, etherscan].map((imgItem, index,herf) => (
               <img key={index} src={imgItem}></img>
             ))}
           </div>
@@ -169,7 +170,7 @@ export default function Home() {
         {isShoWallet && <Web3Status setWallet={setIsShoWallet} />}
       </div>
       {/* success*/}
-      <div className='open-site'>
+      {/* <div className='open-site'>
             <img  className='metamask1-img' src={metamask1}/>
 
             <img className="opensea-img" src={opensea} alt="" />
@@ -177,15 +178,15 @@ export default function Home() {
             <img className='Sucessful-img' src={Sucessful} alt=''/>
             <img className='openaes-img' src={openaes}/>
             <img className='body_export-img' src={body_export}/>
-      </div>
+      </div> */}
       {/* failure */}
-      {/* <div className='open-site'>
+      <div className='open-site'>
               <img className="opensea-img" src={etherscan} alt="" />
               <img  className='metamask1-img' src={metamask1}/>
              <img className='Groupimg' src={Groupimg} alt=''/>
              <img className='CheckEtherscan-img' src={CheckEtherscan}/>
              <img className='body_export-img1' src={body_export}/>
-      </div> */}
+      </div>
        {/* Before login */}
       {/* <div className='open-site'>
              <img className='buy-img' src={buy}/>
@@ -195,13 +196,13 @@ export default function Home() {
               <img className='buy-img' src={buy}/>
         </div> */}
           {/* Before login two */}
-        <div className='open-site'>
+        {/* <div className='open-site'>
             <img className='mint-img' src={mint_img} alt=''/>
             <img className='mastmarsk-img' src={mastmarsk}/>
             <img className='buy-img' src={buy}/>
             <img className='time-img' src={time}/> 
           <img className='taranstr-img' src={taranstr}/>
-        </div>
+        </div> */}
         {/* After the failure */}
         {/* <div className='open-site'>
             <img className='Blackbackground-img' src={Blackbackground} alt=''/> 

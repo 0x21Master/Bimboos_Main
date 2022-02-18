@@ -462,12 +462,29 @@ export default function Home() {
           />
         </div>
         <div className="wrap-content" id="wrap-content">
-          <img className="text-one" src={textOne} alt="" />
+          {/* <img className="text-one" src={textOne} alt="" /> */}
+          <div className="text-one">
+            <p>
+              Michaela * Gaia * Emani * Amoura * Naomi * Rosey * Tiara * Kagura * Lamia * Luna * Fiona * Dawn * Fiora *
+              Valentina *Ivy * Artemis * Athena * Skylar * Kim * Gigi * Yves * Isabella * Sophia * Lucinda * Blanc *
+              Margot * Adeline * Harper * Dina * Abigail * Siren * Arya * Alaia * Cardi * Quinn * Vivianna * Wind *
+              Aurora * Kana * Yazakura * Munehiko * Adaira * Smego * Squire * Sylph * Ling * Bell * Sakura * Mousse *
+              Yoyo * Celia * Xayah * Lilith * Camilla * Sasha * Miya * SYAHRINI
+            </p>
+          </div>
           <div className="content-middle">
             {/* <Web3Status setWallet={setIsShoWallet} /> */}
             <img className="middle-bg" src={bg_body} alt="" />
 
-            <img className="text-two" src={textTwo} alt="" />
+            <div className="text-two">
+              <p>
+                Michaela * Gaia * Emani * Amoura * Naomi * Rosey * Tiara * Kagura * Lamia * Luna * Fiona * Dawn * Fiora
+                * Valentina *Ivy * Artemis * Athena * Skylar * Kim * Gigi * Yves * Isabella * Sophia * Lucinda * Blanc *
+                Margot * Adeline * Harper * Dina * Abigail * Siren * Arya * Alaia * Cardi * Quinn * Vivianna * Wind *
+                Aurora * Kana * Yazakura * Munehiko * Adaira * Smego * Squire * Sylph * Ling * Bell * Sakura * Mousse *
+                Yoyo * Celia * Xayah * Lilith * Camilla * Sasha * Miya * SYAHRINI
+              </p>
+            </div>
             <div className="chat-icon"></div>
             <div className="content-text"></div>
           </div>

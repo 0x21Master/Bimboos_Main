@@ -144,8 +144,14 @@ export default function Home() {
       setOpen(true)
       return
     }
-    const signerContract = contract?.connect(signer)
 
+    const signerContract = contract?.connect(signer)
+    const ownerBalanceOf = await signerContract?.balanceOf(account)
+    if (Number(ownerBalanceOf?.toString() || 0) >= 3) {
+      setErrMsg('No one buys three')
+      setOpen(true)
+      return
+    }
     const mintPrice = await signerContract?.mintPrice()
     const totalMintPrice = new BigNumber(mintPrice?.toString() ?? 0)
       .times(mintNum)

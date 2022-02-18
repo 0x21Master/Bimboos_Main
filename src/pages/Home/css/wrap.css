@@ -38,7 +38,6 @@
 .wrap .wrap-content {
   width: 100%;
   position: relative;
-  height: 50.3125rem /* 965/16 */;
 }
 .wrap .wrap-content .text-one {
   width: 104%;
@@ -69,7 +68,7 @@
   height: 9.09375rem /* 145.5/16 */;
   position: absolute;
   left: -1.3125rem /* 21/16 */;
-  bottom: -11.5625rem /* 25/16 */;
+  bottom: -4.6rem /* 25/16 */;
 }
 .wrap .wrap-content .content-middle .chat-icon {
   position: absolute;
@@ -180,16 +179,16 @@
   padding: 0px;
   position: relative;
   width: 50rem;
-  top: -66rem;
-  left: 13rem;
+  top: -58rem;
+  left: 0rem;
   z-index: 2;
   cursor: pointer;
 }
 .open-site .opensea-img {
   position: absolute;
-  top: 19rem;
-  left: 7rem;
-  width: 2.125rem /* 50/16 */;
+  top: 15rem;
+  left: 4rem;
+  width: 3.125rem /* 50/16 */;
   cursor: pointer;
 }
 .open-site .Sucessful-img {
@@ -209,8 +208,8 @@
 .open-site .body_export-img {
   width: 2rem;
   position: absolute;
-  top: 21rem;
-  left: 48.8rem;
+  top: 16rem;
+  left: 38.8rem;
 }
 .open-site .Groupimg {
   width: 50rem;
@@ -251,16 +250,26 @@
   width: 6rem;
   position: absolute;
   cursor: pointer;
-  left: 31rem;
+  left: 43rem;
   top: 2rem;
   z-index: 3;
 }
-.open-site .time-img {
+.open-site .time-img-box {
   position: absolute;
   z-index: 3;
-  width: 20rem;
-  left: 9rem;
-  top: 6rem;
+  left: 14rem;
+  top: 10rem;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 2.5rem /* 40/16 */;
+}
+.open-site .time-img-box .time-img {
+  width: 15rem;
+  margin-top: 0.9rem;
+}
+.open-site .time-img-box span {
+  transform: rotate(-2deg);
 }
 .open-site .taranstr-img {
   position: absolute;
@@ -270,42 +279,50 @@
   top: 21.5rem;
 }
 .open-site .Blackbackground-img {
-  width: 40rem;
+  width: 53.125rem /* 850/16 */;
   position: absolute;
   cursor: pointer;
 }
-.open-site .body_text-img {
-  width: 16rem;
+.open-site .body_text_box {
   position: absolute;
-  cursor: pointer;
-  left: 12rem;
-  top: 11rem;
+  left: 20rem;
+  top: 15rem;
+  font-size: 4rem /* 40/16 */;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.open-site .body_text_box .body_text-img {
+  margin-top: -0.9375rem /* 15/16 */;
+  width: 10rem;
 }
 .open-site .out-img {
   width: 2rem;
   position: absolute;
   cursor: pointer;
-  left: 19.4rem;
-  top: 16.3rem;
+  left: 21.4rem;
+  top: 20.3rem;
 }
 .open-site p {
   position: absolute;
   cursor: pointer;
-  left: 22.4rem;
-  top: 17rem;
+  left: 25.4rem;
+  top: 21.2rem;
   font-size: 2rem;
+  color: #fff;
 }
 .open-site .up-img {
   width: 2rem;
   position: absolute;
   cursor: pointer;
-  left: 24.5rem;
-  top: 16.8rem;
+  left: 28.5rem;
+  top: 21rem;
 }
 .open-site .Mint_two-img {
   width: 12rem;
   position: absolute;
   cursor: pointer;
-  left: 20rem;
-  top: 21rem;
+  left: 23rem;
+  top: 24rem;
 }

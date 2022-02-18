@@ -91,6 +91,13 @@
     "stateMutability": "view",
     "type": "function"
   },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "tokenQuantity", "type": "uint256" }],
+    "name": "devMint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
   { "inputs": [], "name": "flipReveal", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
   { "inputs": [], "name": "flipSaleActive", "outputs": [], "stateMutability": "nonpayable", "type": "function" },
   {
@@ -122,13 +129,6 @@
     "name": "maxMint",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [{ "internalType": "uint256", "name": "tokenQuantity", "type": "uint256" }],
-    "name": "mintNicMeta",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {

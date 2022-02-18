@@ -238,14 +238,14 @@ export default function Web3Status({ setWallet }: any) {
   return (
     <>
       {/* <Web3StatusInner /> */}
-      {(contextNetwork.active || active) && (
-        <WalletModal
-          ENSName={ENSName ?? undefined}
-          setWallet={setWallet}
-          pendingTransactions={pending}
-          confirmedTransactions={confirmed}
-        />
-      )}
+      {/* {(contextNetwork.active || active) && ( */}
+      <WalletModal
+        ENSName={ENSName ?? undefined}
+        setWallet={setWallet}
+        pendingTransactions={pending}
+        confirmedTransactions={confirmed}
+      />
+      {/* )} */}
     </>
   )
 }

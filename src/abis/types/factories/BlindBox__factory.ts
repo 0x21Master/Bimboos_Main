@@ -207,6 +207,19 @@ const _abi = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "tokenQuantity",
+        type: "uint256",
+      },
+    ],
+    name: "devMint",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "flipReveal",
     outputs: [],
@@ -287,19 +300,6 @@ const _abi = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenQuantity",
-        type: "uint256",
-      },
-    ],
-    name: "mintNicMeta",
-    outputs: [],
-    stateMutability: "payable",
     type: "function",
   },
   {

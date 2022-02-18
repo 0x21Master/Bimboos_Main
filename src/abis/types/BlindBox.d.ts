@@ -28,13 +28,13 @@ interface BlindBoxInterface extends ethers.utils.Interface {
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
     "baseExtension()": FunctionFragment;
+    "devMint(uint256)": FunctionFragment;
     "flipReveal()": FunctionFragment;
     "flipSaleActive()": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "maxBalance()": FunctionFragment;
     "maxMint()": FunctionFragment;
-    "mintNicMeta(uint256)": FunctionFragment;
     "mintPrice()": FunctionFragment;
     "name()": FunctionFragment;
     "notRevealedUri()": FunctionFragment;
@@ -79,6 +79,10 @@ interface BlindBoxInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "devMint",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "flipReveal",
     values?: undefined
   ): string;
@@ -99,10 +103,6 @@ interface BlindBoxInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "maxMint", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "mintNicMeta",
-    values: [BigNumberish]
-  ): string;
   encodeFunctionData(functionFragment: "mintPrice", values?: undefined): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(
@@ -190,6 +190,7 @@ interface BlindBoxInterface extends ethers.utils.Interface {
     functionFragment: "baseExtension",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "devMint", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "flipReveal", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "flipSaleActive",
@@ -205,10 +206,6 @@ interface BlindBoxInterface extends ethers.utils.Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "maxBalance", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "maxMint", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "mintNicMeta",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "mintPrice", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(
@@ -348,6 +345,11 @@ export class BlindBox extends BaseContract {
 
     baseExtension(overrides?: CallOverrides): Promise<[string]>;
 
+    devMint(
+      tokenQuantity: BigNumberish,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     flipReveal(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -370,11 +372,6 @@ export class BlindBox extends BaseContract {
     maxBalance(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     maxMint(overrides?: CallOverrides): Promise<[BigNumber]>;
-
-    mintNicMeta(
-      tokenQuantity: BigNumberish,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
 
     mintPrice(overrides?: CallOverrides): Promise<[BigNumber]>;
 
@@ -503,6 +500,11 @@ export class BlindBox extends BaseContract {
 
   baseExtension(overrides?: CallOverrides): Promise<string>;
 
+  devMint(
+    tokenQuantity: BigNumberish,
+    overrides?: PayableOverrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   flipReveal(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -525,11 +527,6 @@ export class BlindBox extends BaseContract {
   maxBalance(overrides?: CallOverrides): Promise<BigNumber>;
 
   maxMint(overrides?: CallOverrides): Promise<BigNumber>;
-
-  mintNicMeta(
-    tokenQuantity: BigNumberish,
-    overrides?: PayableOverrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
 
   mintPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -652,6 +649,11 @@ export class BlindBox extends BaseContract {
 
     baseExtension(overrides?: CallOverrides): Promise<string>;
 
+    devMint(
+      tokenQuantity: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     flipReveal(overrides?: CallOverrides): Promise<void>;
 
     flipSaleActive(overrides?: CallOverrides): Promise<void>;
@@ -670,11 +672,6 @@ export class BlindBox extends BaseContract {
     maxBalance(overrides?: CallOverrides): Promise<BigNumber>;
 
     maxMint(overrides?: CallOverrides): Promise<BigNumber>;
-
-    mintNicMeta(
-      tokenQuantity: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<void>;
 
     mintPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -827,6 +824,11 @@ export class BlindBox extends BaseContract {
 
     baseExtension(overrides?: CallOverrides): Promise<BigNumber>;
 
+    devMint(
+      tokenQuantity: BigNumberish,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     flipReveal(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -849,11 +851,6 @@ export class BlindBox extends BaseContract {
     maxBalance(overrides?: CallOverrides): Promise<BigNumber>;
 
     maxMint(overrides?: CallOverrides): Promise<BigNumber>;
-
-    mintNicMeta(
-      tokenQuantity: BigNumberish,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
 
     mintPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -986,6 +983,11 @@ export class BlindBox extends BaseContract {
 
     baseExtension(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    devMint(
+      tokenQuantity: BigNumberish,
+      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     flipReveal(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
@@ -1008,11 +1010,6 @@ export class BlindBox extends BaseContract {
     maxBalance(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     maxMint(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    mintNicMeta(
-      tokenQuantity: BigNumberish,
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
 
     mintPrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 

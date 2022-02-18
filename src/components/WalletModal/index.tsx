@@ -29,6 +29,24 @@ import PendingView from './PendingView'
 import walletBg from '../../assets/HomePage_imgs/sasse/wallet-background.png'
 import metamask from '../../assets/HomePage_imgs/sasse/metamask.png'
 import walletConnect from '../../assets/HomePage_imgs/sasse/wallet-connect.png'
+import bg_body from '../../assets/HomePage_imgs/sasse/bg_body.png'
+import body_export from '../../assets/HomePage_imgs/sasse/body_export.png'
+import Sucessful from '../../assets/HomePage_imgs/sasse/Sucessful.png'
+import openaes from '../../assets/HomePage_imgs/sasse/openaes.png'
+import Groupimg from '../../assets/HomePage_imgs/sasse/Groupimg.png'
+import CheckEtherscan from '../../assets/HomePage_imgs/sasse/CheckEtherscan.png'
+import mintgorme from '../../assets/HomePage_imgs/sasse/mintgorme.png'
+import mastmarsk from '../../assets/HomePage_imgs/sasse/metamask.png'
+import buy from '../../assets/HomePage_imgs/sasse/buy.png'
+import mint_img from '../../assets/HomePage_imgs/sasse/mint.png'
+import time from '../../assets/HomePage_imgs/sasse/time.png'
+import metamask1 from '../../assets/HomePage_imgs/sasse/metamask1.png'
+import taranstr from '../../assets/HomePage_imgs/sasse/taranstr.png'
+import body_text from '../../assets/HomePage_imgs/sasse/body_text.png'
+import Mint_two from '../../assets/HomePage_imgs/sasse/Mint_two.png'
+import up from '../../assets/HomePage_imgs/sasse/up.png'
+import out from '../../assets/HomePage_imgs/sasse/out.png'
+import Blackbackground from '../../assets/HomePage_imgs/sasse/Blackbackground.png'
 
 const CloseIcon = styled.div`
   position: absolute;
@@ -70,11 +88,7 @@ const ContentWrapper = styled.div`
 `
 
 const UpperSection = styled.div`
-  position: fixed;
-  top: 0;
-  z-index: 999;
   width: 100%;
-  background: yellow;
   h5 {
     margin: 0;
     margin-bottom: 0.5rem;
@@ -292,38 +306,22 @@ export default function WalletModal({
       return (
         <>
           {key === 'METAMASK' ? (
-            <div
-              className="metamask"
-              id={`connect-${key}`}
-              onClick={() => {
-                option.connector === connector
-                  ? () => {
-                      setWalletView(WALLET_VIEWS.ACCOUNT)
-                      setWallet(false)
-                    }
-                  : !option.href && tryActivation(option.connector)
-              }}
-              key={key}
-            >
-              <img src={metamask} alt="" />
+            <div className="metamask">
+              <img className="buy-img" src={buy} />
+              <img className="mint-img" src={mint_img} alt="" />
+              <img
+                className="mastmarsk-img"
+                onClick={() => {
+                  option.connector === connector
+                    ? setWalletView(WALLET_VIEWS.ACCOUNT)
+                    : !option.href && tryActivation(option.connector)
+                }}
+                src={mastmarsk}
+              />
+              <img className="time-img" src={time} />
+              {/* <img className="buy-img" src={buy} /> */}
             </div>
-          ) : (
-            <div
-              className="wallet-connect"
-              id={`connect-${key}`}
-              onClick={() => {
-                option.connector === connector
-                  ? () => {
-                      setWalletView(WALLET_VIEWS.ACCOUNT)
-                      setWallet(false)
-                    }
-                  : !option.href && tryActivation(option.connector)
-              }}
-              key={key}
-            >
-              <img src={walletConnect} alt="" />
-            </div>
-          )}
+          ) : null}
 
           {/* <Option
               id={`connect-${key}`}
@@ -391,19 +389,33 @@ export default function WalletModal({
     //     </UpperSection>
     //   )
     // }
-    // if (account && walletView === WALLET_VIEWS.ACCOUNT) {
-    //   return (
-    //     <>
-    //       <AccountDetails
-    //         toggleWalletModal={toggleWalletModal}
-    //         pendingTransactions={pendingTransactions}
-    //         confirmedTransactions={confirmedTransactions}
-    //         ENSName={ENSName}
-    //         openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)}
-    //       />
-    //     </>
-    //   )
-    // }
+    if (account && walletView === WALLET_VIEWS.ACCOUNT) {
+      return (
+        <>
+          {/* <AccountDetails
+            toggleWalletModal={toggleWalletModal}
+            pendingTransactions={pendingTransactions}
+            confirmedTransactions={confirmedTransactions}
+            ENSName={ENSName}
+            openOptions={() => setWalletView(WALLET_VIEWS.OPTIONS)}
+          /> */}
+          <div className="wallet-box">
+            <img className="wallet-bgimg" src={bg_body} alt="" />
+          </div>
+          <div className="content-box">
+            <div className="open-site">
+              <div className="open-site">
+                <img className="buy-img" src={buy} />
+                <img className="mint-img" src={mint_img} alt="" />
+                <img className="mastmarsk-img" src={mastmarsk} />
+                <img className="time-img" src={time} />
+                <img className="buy-img" src={buy} />
+              </div>
+            </div>
+          </div>
+        </>
+      )
+    }
     return (
       <UpperSection>
         {/* <CloseIcon onClick={toggleWalletModal}>
@@ -452,7 +464,7 @@ export default function WalletModal({
               </RowBetween>
             </LinkCard> */}
         <div className="wallet-box">
-          <img className="wallet-bgimg" src={walletBg} alt="" />
+          <img className="wallet-bgimg" src={bg_body} alt="" />
         </div>
         {/* <div>{getOptions()}</div> */}
         <div className="connect-box">

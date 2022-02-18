@@ -1,16 +1,18 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import './App.css'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom'
 import Home from './Home'
 import Layout from '../components/Layout'
-import { RedirectPath } from 'pages/Swap/redirects'
+// import { RedirectPath } from 'pages/Swap/redirects'
+export function RedirectPath({ location }: RouteComponentProps) {
+  return <Redirect to={{ ...location, pathname: '/' }} />
+}
 function App() {
   return (
     <Layout>
       <Switch>
         <Route exact strict path="/" component={Home} />
-        {/* <Route exact strict path="/" component={Home_page} /> */}
         <Route component={RedirectPath} />
       </Switch>
     </Layout>

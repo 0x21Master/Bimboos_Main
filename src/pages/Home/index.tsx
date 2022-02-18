@@ -147,6 +147,12 @@ export default function Home() {
 
     const signerContract = contract?.connect(signer)
     const ownerBalanceOf = await signerContract?.balanceOf(account)
+    const isActiveMint = await signerContract?._isSaleActive()
+    if (!isActiveMint) {
+      setErrMsg('Not yet on sale')
+      setOpen(true)
+      return
+    }
     if (Number(ownerBalanceOf?.toString() || 0) >= 3) {
       setErrMsg('No one buys three')
       setOpen(true)
@@ -433,22 +439,27 @@ export default function Home() {
             {/* {[twitter, discord, opensea, etherscan].map((imgItem, index, herf) => (
               <img key={index} src={imgItem}></img>
             ))} */}
-            <a href="https://twitter.com/Dream_Bimbos">
+            <a href="https://twitter.com/Dream_Bimbos" target="_blank" rel="noreferrer">
               <img src={twitter} />
             </a>
-            <a href="DreamCard.io ">
+            <a href="https://discord.gg/xworldgames" target="_blank" rel="noreferrer">
               <img src={discord} />
             </a>
-            <a href="https://opensea.io/collection/dreamcardbimbos">
+            <a href="https://opensea.io/collection/dreamcardbimbos" target="_blank" rel="noreferrer">
               <img src={opensea} />
             </a>
-            <a href="https://discord.gg/xworldgames">
+            <a href="https://etherscan.io" target="_blank" rel="noreferrer">
               <img src={etherscan} />
             </a>
           </div>
-          <a href="#wrap-content">
-            <img className="mint-img" src={mintBtn} alt="" />
-          </a>
+          <img
+            className="mint-img"
+            src={mintBtn}
+            alt=""
+            onClick={() => {
+              document.documentElement.scrollTop = 590
+            }}
+          />
         </div>
         <div className="wrap-content" id="wrap-content">
           <img className="text-one" src={textOne} alt="" />

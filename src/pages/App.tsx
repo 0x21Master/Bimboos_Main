@@ -15,6 +15,8 @@ function App() {
       <Switch>
         <Route exact strict path="/" component={Home} />
         <Route exact strict path="/notfound" component={NotFound} />
+        <Route exact strict path="#wrap-content" component={Home} />
+
         <Route component={RedirectPath} />
       </Switch>
     </Layout>

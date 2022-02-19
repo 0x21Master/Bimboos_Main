@@ -264,14 +264,16 @@ export default function Home() {
   }
   const toHHmmss = (data: number) => {
     var time
+    var days = parseInt(((data % (1000 * 60 * 60 )) / (1000 * 60 * 60)).toString())
     var hours = parseInt(((data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString())
     var minutes = parseInt(((data % (1000 * 60 * 60)) / (1000 * 60)).toString())
     var seconds = parseInt(((data % (1000 * 60)) / 1000).toString())
     time =
+    (days < 10 ? '0' + days : days) + ':' +
       (hours < 10 ? '0' + hours : hours) +
       ':' +
-      (minutes < 10 ? '0' + minutes : minutes) +
-      ':' +
+      // (minutes < 10 ? '0' + minutes : minutes) +
+      // ':' +
       (seconds < 10 ? '0' + seconds : seconds)
     return time
   }
@@ -390,6 +392,7 @@ export default function Home() {
     return walletView === WALLET_VIEWS.PENDING ? (
       pendingError ? (
         <div className="open-site">
+
           <img className="mint-img" src={mint_img} alt="" />
           <img
             className="mastmarsk-img"
@@ -413,9 +416,13 @@ export default function Home() {
   }
   const showWalletStatus = () => {
     return (
-      <div className="open-site">
+      <div className="open-site walletStatus">
         <img className="buy-img" src={buy} />
         <img className="mint-img" src={mint_img} alt="" />
+        <div className="time-img-box">
+            <img className="time-img" src={MintStartIn} />
+            <span>{times}</span>
+          </div>
         <img
           className="mastmarsk-img"
           src={mastmarsk}
@@ -542,14 +549,14 @@ export default function Home() {
             <img className='mint-img' src={mint_img} alt=''/>
             <img className='mastmarsk-img' src={mastmarsk}/>
             <img className='buy-img' src={buy}/>
-            <img className='time-img' src={time}/> 
+            <img className='time-img' src={time}/>
           <img className='taranstr-img' src={taranstr}/>
         </div> */}
       {/* After the failure */}
       {/* <div className='open-site'>
-            <img className='Blackbackground-img' src={Blackbackground} alt=''/> 
+            <img className='Blackbackground-img' src={Blackbackground} alt=''/>
             <img className='buy-img' src={buy}/>
-            <img className='time-img' src={time}/> 
+            <img className='time-img' src={time}/>
             <img className='body_text-img' src={body_text}/>
             <img className='out-img' src={out} onClick={but} />
             <p>{initialvalue}</p>

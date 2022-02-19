@@ -264,6 +264,9 @@ export default function Home() {
     if (mintNum < 3) {
       const arrs = mintNum + 1
       setMintNum(arrs)
+    }else{
+      setErrMsg('1 wallet can only mint 3 avatars!')
+      setOpen(true)
     }
   }
 
@@ -293,8 +296,8 @@ export default function Home() {
     return time
   }
   const showCountdown = (currTime: number) => {
-    const openMint = 1645804800000
-    // const openMint = 1645257868000
+    // const openMint = 1645804800000
+    const openMint = 1645257868000
 
     const times = toHHmmss(openMint - currTime)
     setCurrentTime(openMint - currTime)

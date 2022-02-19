@@ -80,10 +80,12 @@ export default function Home() {
   const [times, setTimes] = useState<string>('00:00:00')
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)
   const [isMint, setIsMint] = useState<string>('')
+  const [isShowTime, setIsShowTime] = useState<boolean>(true)
 
   const [pendingWallet, setPendingWallet] = useState<AbstractConnector | undefined>()
 
   const [pendingError, setPendingError] = useState<boolean>()
+  const [currentTime, setCurrentTime] = useState<number>(10000)
   const contract = useBlindBoxAbi()
   const { active, account, connector, activate, error, library } = useWeb3React()
   const logMonitoringEvent = useWalletConnectMonitoringEventCallback()
@@ -127,10 +129,21 @@ export default function Home() {
     if (!signer) {
       return
     }
+    const signerContract = contract?.connect(signer)
+
     if (totalsupply === '7000') {
       setErrMsg('sold out')
       setOpen(true)
       return
+    }
+    if(Number(currentTime)>=1000){
+      setErrMsg("It's not time for sale")
+      setOpen(true)
+      return
+    }else{
+
+    //  signerContract?.flipSaleActive()
+
     }
 
     if (mintNum === 0) {
@@ -145,7 +158,6 @@ export default function Home() {
       return
     }
 
-    const signerContract = contract?.connect(signer)
     const ownerBalanceOf = await signerContract?.balanceOf(account)
     const isActiveMint = await signerContract?._isSaleActive()
     if (!isActiveMint) {
@@ -154,7 +166,7 @@ export default function Home() {
       return
     }
     if (Number(ownerBalanceOf?.toString() || 0) >= 3) {
-      setErrMsg('No one buys three')
+      setErrMsg('no more than three')
       setOpen(true)
       return
     }
@@ -263,8 +275,11 @@ export default function Home() {
     }
   }
   const toHHmmss = (data: number) => {
+    if(data<0){
+      return '00:00:00:00'
+    }
     var time
-    var days = parseInt(((data % (1000 * 60 * 60 )) / (1000 * 60 * 60)).toString())
+    var days = parseInt(((data / (1000 * 60 * 60 * 24))).toString())
     var hours = parseInt(((data % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString())
     var minutes = parseInt(((data % (1000 * 60 * 60)) / (1000 * 60)).toString())
     var seconds = parseInt(((data % (1000 * 60)) / 1000).toString())
@@ -272,23 +287,33 @@ export default function Home() {
     (days < 10 ? '0' + days : days) + ':' +
       (hours < 10 ? '0' + hours : hours) +
       ':' +
-      // (minutes < 10 ? '0' + minutes : minutes) +
-      // ':' +
+      (minutes < 10 ? '0' + minutes : minutes) +
+      ':' +
       (seconds < 10 ? '0' + seconds : seconds)
     return time
   }
   const showCountdown = (currTime: number) => {
-    const openMint = 1645272000000
+    const openMint = 1645804800000
+    // const openMint = 1645257868000
 
     const times = toHHmmss(openMint - currTime)
+    setCurrentTime(openMint - currTime)
+
     setTimes(times)
   }
   let currTime = new Date().valueOf()
 
   useEffect(() => {
-    setInterval(() => {
+    let timesInterval = setInterval(() => {
+    const openMint = 1645804800000
+
       currTime = currTime + 1000
       showCountdown(currTime)
+     if((openMint-currTime)<=1000){
+      setIsShowTime(false)
+
+      clearInterval(timesInterval )
+     }
     }, 1000)
   }, [])
   const showMiddle = () => {
@@ -298,10 +323,10 @@ export default function Home() {
           <img className="mint-img" src={mint_img} alt="" />
           <img className="mastmarsk-img" src={mastmarsk} />
           <img className="buy-img" src={buy} />
-          <div className="time-img-box">
+          {isShowTime?<div className="time-img-box">
             <img className="time-img" src={MintStartIn} />
             <span>{times}</span>
-          </div>
+          </div>:null}
           <img className="taranstr-img" src={taranstr} />
         </div>
       )
@@ -318,10 +343,10 @@ export default function Home() {
         <div className="open-site">
           <img className="Blackbackground-img" src={Blackbackground} alt="" />
           <img className="buy-img" src={buy} />
-          <div className="time-img-box">
+          {isShowTime?<div className="time-img-box">
             <img className="time-img" src={CounDown} />
             <span>{times}</span>
-          </div>
+          </div>:null}
           <div className="body_text_box">
             {totalsupply}/
             <img className="body_text-img" src={body_text} />
@@ -419,10 +444,10 @@ export default function Home() {
       <div className="open-site walletStatus">
         <img className="buy-img" src={buy} />
         <img className="mint-img" src={mint_img} alt="" />
-        <div className="time-img-box">
+        {isShowTime?<div className="time-img-box">
             <img className="time-img" src={MintStartIn} />
             <span>{times}</span>
-          </div>
+          </div>:null}
         <img
           className="mastmarsk-img"
           src={mastmarsk}

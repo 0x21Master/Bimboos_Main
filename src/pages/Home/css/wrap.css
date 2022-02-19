@@ -506,8 +506,8 @@
 .walletStatus .time-img-box {
   left: 10rem;
   top: 5rem;
-  font-size: 1.875rem /* 30/16 */;
+  font-size: 1.575rem /* 30/16 */;
 }
 .walletStatus .time-img-box .time-img {
-  width: 11rem;
+  width: 10rem;
 }

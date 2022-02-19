@@ -137,7 +137,7 @@ export default function Home() {
       return
     }
     if(Number(currentTime)>=1000){
-      setErrMsg("It's not time for sale")
+      setErrMsg("It’s not available to mint.")
       setOpen(true)
       return
     }else{

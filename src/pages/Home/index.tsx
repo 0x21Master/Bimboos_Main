@@ -296,8 +296,8 @@ export default function Home() {
     return time
   }
   const showCountdown = (currTime: number) => {
-    // const openMint = 1645804800000
-    const openMint = 1645257868000
+    const openMint = 1645804800000
+    // const openMint = 1645257868000
 
     const times = toHHmmss(openMint - currTime)
     setCurrentTime(openMint - currTime)

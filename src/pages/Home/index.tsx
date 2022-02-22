@@ -296,7 +296,7 @@ export default function Home() {
     return time
   }
   const showCountdown = (currTime: number) => {
-    const openMint = 1645718400000
+    const openMint = 1645747200000
     // const openMint = 1645257868000
 
     const times = toHHmmss(openMint - currTime)
@@ -308,7 +308,7 @@ export default function Home() {
 
   useEffect(() => {
     let timesInterval = setInterval(() => {
-    const openMint = 1645718400000
+    const openMint = 1645747200000
 
       currTime = currTime + 1000
       showCountdown(currTime)

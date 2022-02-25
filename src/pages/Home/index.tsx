@@ -60,6 +60,7 @@ import usePrevious from 'hooks/usePrevious'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
 import { TransactionDetails } from 'state/transactions/reducer'
 import useENSName from 'hooks/useENSName'
+import backBtn from '../../assets/HomePage_imgs/sasse/back.png'
 
 function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
   return b.addedTime - a.addedTime
@@ -165,11 +166,11 @@ export default function Home() {
       setOpen(true)
       return
     }
-    if (Number(ownerBalanceOf?.toString() || 0) >= 3) {
-      setErrMsg('no more than three')
-      setOpen(true)
-      return
-    }
+    // if (Number(ownerBalanceOf?.toString() || 0) >= 3) {
+    //   setErrMsg('no more than three')
+    //   setOpen(true)
+    //   return
+    // }
     const mintPrice = await signerContract?.mintPrice()
     const totalMintPrice = new BigNumber(mintPrice?.toString() ?? 0)
       .times(mintNum)
@@ -374,21 +375,21 @@ export default function Home() {
             src={Sucessful}
             alt=""
             onClick={() => {
-              window.open('https://opensea.io/account')
+              window.open('https://opensea.io/collection/dream-card-bimbos-v2')
             }}
           />
           <img
             className="openaes-img"
             src={openaes}
             onClick={() => {
-              window.open('https://opensea.io/account')
+              window.open('https://opensea.io/collection/dream-card-bimbos-v2')
             }}
           />
           <img
             className="body_export-img"
             src={body_export}
             onClick={() => {
-              window.open('https://opensea.io/account')
+              window.open('https://opensea.io/collection/dream-card-bimbos-v2')
             }}
           />
         </div>
@@ -399,21 +400,25 @@ export default function Home() {
         <div className="open-site">
           <img className="opensea-img" src={etherscan} alt="" />
           <img className="metamask1-img" src={metamask1} />
-          <img className="Groupimg" src={Groupimg} alt="" />
+          <img className="Groupimg" src={Groupimg} alt=""  />
           <img
             className="CheckEtherscan-img"
             src={CheckEtherscan}
             onClick={() => {
-              window.open(`https://etherscan.io`)
+              window.open(`https://etherscan.io/address/0xbbE2c8a388c2e5D99A8bf65985a2C9C7dcd0941D`)
             }}
           />
           <img
             className="body_export-img1"
             src={body_export}
             onClick={() => {
-              window.open('https://etherscan.io')
+              window.open('https://etherscan.io/address/0xbbE2c8a388c2e5D99A8bf65985a2C9C7dcd0941D')
             }}
           />
+          <img className='backbtn' src={backBtn} alt="" onClick={()=>{
+            setIsMint('')
+            showMiddle()
+          }}  />
         </div>
       )
     }
@@ -480,10 +485,10 @@ export default function Home() {
             <a href="https://discord.gg/xworldgames" target="_blank" rel="noreferrer">
               <img src={discord} />
             </a>
-            <a href="https://opensea.io/collection/dreamcardbimbos" target="_blank" rel="noreferrer">
+            <a href="https://opensea.io/collection/dream-card-bimbos-v2" target="_blank" rel="noreferrer">
               <img src={opensea} />
             </a>
-            <a href="https://etherscan.io" target="_blank" rel="noreferrer">
+            <a href="https://etherscan.io/address/0xbbE2c8a388c2e5D99A8bf65985a2C9C7dcd0941D" target="_blank" rel="noreferrer">
               <img src={etherscan} />
             </a>
           </div>

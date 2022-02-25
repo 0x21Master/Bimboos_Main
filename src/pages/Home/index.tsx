@@ -15,7 +15,7 @@ import Header from 'components/Header'
 import { utils } from 'ethers/lib/ethers'
 import { ChangeEvent, useState, useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
-import { postWhiteList } from 'apis/whiteList'
+// import { postWhiteList } from 'apis/whiteList'
 import { Dialog, DialogTitle } from '@material-ui/core'
 import bgImg from '../../assets/HomePage_imgs/sasse/wrap-top.png'
 import mintBtn from '../../assets/HomePage_imgs/sasse/mint-btn.png'
@@ -152,12 +152,12 @@ export default function Home() {
       setOpen(true)
       return
     }
-    const isWhiteAddress = await postWhiteList({ address: account ?? '' })
-    if (!isWhiteAddress.data.status) {
-      setErrMsg('No purchase permission')
-      setOpen(true)
-      return
-    }
+    // const isWhiteAddress = await postWhiteList({ address: account ?? '' })
+    // if (!isWhiteAddress.data.status) {
+    //   setErrMsg('No purchase permission')
+    //   setOpen(true)
+    //   return
+    // }
 
     const ownerBalanceOf = await signerContract?.balanceOf(account)
     const isActiveMint = await signerContract?._isSaleActive()

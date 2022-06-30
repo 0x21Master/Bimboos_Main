@@ -132,7 +132,7 @@ export default function Home() {
     }
     const signerContract = contract?.connect(signer)
 
-    if (totalsupply === '7000' || true) {
+    if (totalsupply === '7000') {
       setErrMsg('sold out')
       setOpen(true)
       return
@@ -336,7 +336,7 @@ export default function Home() {
         </div>
       )
     }
-    if (totalsupply === '7000' || true) {
+    if (totalsupply === '7000') {
       return (
         <div className="open-site">
           <img className="metamask1-img" src={soldOut} />

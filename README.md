@@ -2,7 +2,7 @@
 
 ## Main function points:
 
-### mint
+### Mint
 
 - Purchase directly after clicking mint If it is not on sale, it will prompt It’s not available to mint
 - If the time is up and the sale has not started, it will prompt Not yet on sale (when the time is up, you need to manually start the sale and turn on flipSaleActive in the write method of the etherscan contract. The owner address is required)
